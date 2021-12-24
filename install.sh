@@ -1,9 +1,21 @@
 #!/usr/bin/env bash
 
 
+DOTFILES_CLONE_PATH=$HOME/dotfiles
+for dotfile in "$DOTFILES_CLONE_PATH/".*; do
+  # Skip `..` and '.'
+  [[ $dotfile =~ \.{1,2}$ ]] && continue
+  # Skip Git related
+  [[ $dotfile =~ \.git$ ]] && continue
+  [[ $dotfile =~ \.gitignore$ ]] && continue
+  [[ $dotfile =~ \.gitattributes$ ]] && continue
+
+  echo "Symlinking $dotfile"
+  ln -sf "$dotfile" "$HOME"
+done
+
 # Link VS Code settings
-cat .zshrc >> ~/.zshrc
-ln -sf ./settings.json $HOME/.local/share/code-server/User
+ln -sf $DOTFILES_CLONE_PATH/.local/share/code-server/User/settings.json $HOME/.local/share/code-server/User
 
 # Install extensions
 /var/tmp/coder/code-server/bin/code-server --install-extension esbenp.prettier-vscode
