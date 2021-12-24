@@ -14,6 +14,8 @@ for dotfile in "$DOTFILES_CLONE_PATH/".*; do
   ln -sf "$dotfile" "$HOME"
 done
 
+cp settings.json /home/coder/.local/share/code-server/User
+
 # Install extensions
 /var/tmp/coder/code-server/bin/code-server --install-extension esbenp.prettier-vscode
 /var/tmp/coder/code-server/bin/code-server --install-extension humao.rest-client
