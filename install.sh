@@ -2,17 +2,7 @@
 
 
 DOTFILES_CLONE_PATH=$HOME/dotfiles
-for dotfile in "$DOTFILES_CLONE_PATH/".*; do
-  # Skip `..` and '.'
-  [[ $dotfile =~ \.{1,2}$ ]] && continue
-  # Skip Git related
-  [[ $dotfile =~ \.git$ ]] && continue
-  [[ $dotfile =~ \.gitignore$ ]] && continue
-  [[ $dotfile =~ \.gitattributes$ ]] && continue
 
-  echo "Symlinking $dotfile"
-  ln -sf "$dotfile" "$HOME"
-done
 
 cp settings.json /home/coder/.local/share/code-server/User
 
