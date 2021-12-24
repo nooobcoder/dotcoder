@@ -2,6 +2,7 @@
 
 
 # Link VS Code settings
+cat .zshrc >> ~/.zshrc
 ln -sf ./settings.json $HOME/.local/share/code-server/User
 
 # Install extensions
@@ -69,5 +70,3 @@ ln -sf ./settings.json $HOME/.local/share/code-server/User
 /var/tmp/coder/code-server/bin/code-server --install-extension vsls-contrib.codetour
 /var/tmp/coder/code-server/bin/code-server --install-extension xaver.clang-format
 /var/tmp/coder/code-server/bin/code-server --install-extension trinm1709.dracula-theme-from-intellij
-
-
