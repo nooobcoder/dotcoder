@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
-
-DOTFILES_CLONE_PATH=$HOME/dotfiles
-
-
-cp settings.json /home/coder/.local/share/code-server/User
+cp ./settings.json /home/coder/.local/share/code-server/User/
 
 # Install extensions
 /var/tmp/coder/code-server/bin/code-server --install-extension esbenp.prettier-vscode
