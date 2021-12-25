@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cat ./settings.json > ~/.local/share/code-server/User/
+cat ./settings.json > ~/.local/share/code-server/User/settings.json
 cat ./.zshrc > ~/.zshrc
 cat ./.gitconfig > ~/.gitconfig
 
