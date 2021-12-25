@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-cp ./settings.json /home/coder/.local/share/code-server/User/
+cat ./settings.json > ~/.local/share/code-server/User/
+cat ./.zshrc > ~/.zshrc
 
 # Install extensions
 /var/tmp/coder/code-server/bin/code-server --install-extension esbenp.prettier-vscode
